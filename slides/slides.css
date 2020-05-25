@@ -1,48 +1,60 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700);
 @import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700);
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
+
 
 body { 
   font-family: 'Source Sans Pro'; sans-serif;
-  font-weight: 400;
   color: #333333;
+}
+p {
+  padding: 0;
+  margin: 12px;
+  font-size: 24px;
 }
 h2 {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: bold;
-  color: #6CA0DC;
+  color: #A7D5E8;
   font-size: 12px;
-  margin: 0.25em 0 0.5em 0;
+  margin: 0 0 0.5em 0;
 }
 h1, h3 {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: bold;
-  color: #6CA0DC;
+  color: #A7D5E8;
 }
 a, a > code {
   font-family: 'Source Sans Pro', sans-serif;
-  color: #6CA0DC;
+  color: #A7D5E8;
   text-decoration: none;
 }
 
-.footnote {
-  position: absolute;
-  bottom: 3em;
-  padding-right: 4em;
-  font-size: 90%;
+.remark-slide-content{
+  font-size: 36px;
 }
-.remark-code, .remark-inline-code { 
-  font-family: 'Source Code Pro', 'Lucida Console', Monaco, monospace; 
-}
-.remark-code-line-highlighted     { background-color: #ffff88; }
 
+
+/* Sections */
 .inverse {
-  background-color: #6CA0DC;
+  background-color: #A7D5E8;
   color: #ffffff;
   /* text-shadow: 0 0 20px #333; */
 }
 .inverse h1, .inverse h2, .inverse h3 {
   color: #f3f3f3;
 }
+
+
+/* Code formatting */
+.remark-code-line-highlighted {
+  background-color: #A7D5E8;
+}
+.remark-code, .remark-inline-code { 
+  font-family: 'Inconsolata', 'Lucida Console', Monaco, monospace; 
+}
+
+
 /* Two-column layout */
 .left-column {
   color: #777;
@@ -72,29 +84,75 @@ a, a > code {
 .pull-right ~ * {
   clear: both;
 }
+
+
+/* Custom boxes */
 .question {
-  background-color: #E1ECF8;
-  padding: 0.25px;
+  border-left: solid 5px #1E5C65;
+  background-color: #1E5C6530;
+  padding: 1px 16px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+.alert {
+  border-right: solid 5px #A7D5E8;
+  background-color: #A7D5E830;
+  padding: 1px 16px;
+  margin-top: 12px;
+  margin-bottom: 12px;
 }
 .instructions {
-  color: #D55E00;
+  border-left: solid 5px #FFD748;
+  background-color: #FFD74850;
+  font-size: 90%;
+  padding: 1px 16px;
+  margin-top: 12px;
+  margin-bottom: 12px;
 }
-ul {
-  list-style-type: square;
+.instructions li::before {
+  content: ">"; 
+  color: #FFD748;
+  display: inline-block; 
+  margin-left: -1.5em
 }
-li{
-  margin: 10px 0;
-}
-.large { font-size: 130% }
-.midi { font-size: 90% }
-.small { font-size: 70% }
-img, video, iframe {
-  max-width: 100%;
-}
+
+
+/* Quotes */
 blockquote {
   border-left: solid 5px lightgray;
   padding-left: 1em;
 }
+
+
+/* Lists */
+ul {
+  list-style: none;
+}
+li::before {
+  content: "✚"; 
+  color: #A7D5E8; 
+  display: inline-block; 
+  width: 1.5em;
+  margin-left: -1.5em
+}
+li{
+  margin: 10px 0;
+}
+
+
+/* Font sizes */
+.large { font-size: 130% }
+.midi { font-size: 85% }
+.small { font-size: 70% }
+
+
+/* Embedded images */
+img, video, iframe {
+  max-width: 100%;
+}
+
+
+/* Tables */
 table {
   margin: auto;
   border-top: 1px solid #666;
@@ -104,6 +162,65 @@ table thead th { border-bottom: 1px solid #ddd; }
 th, td { padding: 5px; }
 thead, tfoot, tr:nth-child(even) { background: #eee }
 
+/* Footer */
+div.my-footer {
+    background-color: #ffffff;
+    border-top: 1px solid #A7D5E8;
+    position: absolute;
+    bottom: 0px;
+    left: 80px;
+    height: 35px;
+    width: 100%;
+}
+div.my-footer span {
+    font-size: 12pt;
+    position: absolute;
+    color: #333333;
+    left: 20px;
+    bottom: 10px;
+}
+div.my-footer a {
+    font-size: 12pt;
+    color: #333333;
+}
+
+
+/* Footnote */
+.footnote {
+  position: absolute;
+  bottom: 3em;
+  padding-right: 4em;
+  font-size: 70%;
+}
+
+
+/* Logo */
+.remark-slide-content:after {
+    content: "";
+    position: absolute;
+    bottom: 5px;
+    right: 810px;
+    height: 70px;
+    width: 81px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("dsbox-logo.png");
+}
+
+
+/* Slide number */
+.remark-slide-number {
+  color: #333333;
+  opacity: 1;
+  font-size: 12pt;
+}
+
+.title-slide .remark-slide-number {
+  display: none;
+}
+
+
+/* Media */
 @page { margin: 0; }
 @media print {
   .remark-slide-scaler {
@@ -115,22 +232,8 @@ thead, tfoot, tr:nth-child(even) { background: #eee }
   }
 }
 
-.remark-slide-content{
-  font-size: 24px;
-}
 
-.remark-slide-content:after {
-    content: "";
-    position: absolute;
-    bottom: 5px;
-    right: 810px;
-    height: 70px;
-    width: 81px;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-image: url("img/sta199-logo-hex.png");
-}
-
+/* What is this? */
 .element.style {
     position: absolute;
     left: 0px;
